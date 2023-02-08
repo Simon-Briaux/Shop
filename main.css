@@ -1,0 +1,43 @@
+body {
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+  
+  .bourse {
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  form {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  table {
+    margin: 20px auto;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    border: 1px solid gray;
+    padding: 10px;
+  }
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+.droite{
+    float: right;
+}

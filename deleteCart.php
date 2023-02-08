@@ -1,0 +1,47 @@
+<?php
+session_start();	// Nous connect à la base de donnee
+include "BDD.php";
+include "fonction.php";
+
+Verif();
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+    try {
+
+            if (isset($_GET["IdDelete"])) $idDelete = $_GET["IdDelete"];
+             echo " <H1>Suppresion de l'Item N°".$_GET["IdDelete"]."</h1> ";
+             echo"<a href='panier.php'>Retour</a><br>";
+
+
+                //$req = "INSERT INTO 'MEDECIN'('Nom','Prenom') VALUES ('".$MedecinNom."','".$MdecinPrenom."')";
+                $req = "DELETE FROM Transaction WHERE IDItem=".$idDelete." AND IDUser = '".$_SESSION["ID"]."'"; 
+                
+                $RequeteStatement = $BasePDO->query($req);
+
+                if($RequeteStatement){
+                    if($RequeteStatement->errorCode()=='00000'){
+                        echo "Reussite de la suppresion ";
+                        echo "L'Item a été supprimer ";
+                    }else{
+                        echo "Erreur N°".$RequeteStatement->errorCode()." lors de la suppresion";
+                    }
+                }else{
+                    echo "Erreur dans le format de la requete";
+                }
+
+    }catch (Exception $e) {
+    echo $e->getMessage();
+    }
+    ?>
+</body>
+</html>

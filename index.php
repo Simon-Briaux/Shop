@@ -2,14 +2,10 @@
 <link rel="stylesheet" href="main.css">
 </head>
 <?php Session_start();
-
-include "BDD.php";
-include "fonction.php";
-
-Deconnexion();
-
-Verif();
-
+    include "BDD.php";
+    include "fonction.php";
+    Deconnexion();
+    Verif();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,16 +20,15 @@ Verif();
     -si c'est pas le cas on affiche le formulaire de connexion/inscription
     sinon la page s'affiche et le joueur peut poursuivre...  -->
 <body>
-
 <?php echo $_SESSION["Pseudo"]?>
-<form method=POST>
-    <input type="submit" name="Exit" value="Se deconnecter">
-</form>
+    <form method=POST>
+        <input type="submit" name="Exit" value="Se deconnecter">
+    </form>
 <div class="bourse">
-<?php
-Bourse();
-?>
-<img src="bourse.jpg" style="width: 50px;"/>
+    <?php
+        Bourse();
+    ?>
+    <img src="bourse.jpg" style="width: 50px;"/>
 </div>
 <a href="panier.php" class="droite"><img src="caddie.jpg" style="width: 70px;"/></a>
     <H1>Bienvenue dans mon Shop, Aventurier !! </H1>
